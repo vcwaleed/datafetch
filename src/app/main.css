@@ -1,0 +1,20 @@
+.paragraph {
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  margin-top: 12rem;
+}
+.Link {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  padding-top: 2rem;
+  
+
+}
+.Link:hover
+{
+  color:blue
+}
