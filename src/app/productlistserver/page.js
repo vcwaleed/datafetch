@@ -8,7 +8,7 @@ export default async function ProductListServer ()
 
 {
     let products =await productList();
-    console.log(products)
+    
     return (
         <>
         <h3 className="text-center font-bold  m-6 text-3xl">App With Server Side Rendring </h3>

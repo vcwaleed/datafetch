@@ -2,25 +2,31 @@
 import Link from "next/link"
 import './product.css'
 import { useEffect, useState } from 'react'
+import Loader from "./Loader"
 export default function Products() {
 
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
                 const response = await fetch("https://dummyjson.com/products");
                 const data = await response.json();
-                setProducts(data.products || []);  // Correcting to set 'data.products' directly
+                setProducts(data.products || []);  
             } catch (error) {
                 console.error('Failed to fetch products:', error);
-            }
+            } finally {
+                setLoading(false); 
+              }
         };
 
         fetchProducts();
     }, []);
 
-    console.log(products, '============')
+    if (loading) {
+        return <Loader />;
+      }
 
     return (
         <>
