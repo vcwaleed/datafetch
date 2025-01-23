@@ -13,12 +13,12 @@ export default function Products() {
             try {
                 const response = await fetch("https://dummyjson.com/products");
                 const data = await response.json();
-                setProducts(data.products || []);  
+                setProducts(data.products || []);
             } catch (error) {
                 console.error('Failed to fetch products:', error);
             } finally {
-                setLoading(false); 
-              }
+                setLoading(false);
+            }
         };
 
         fetchProducts();
@@ -26,7 +26,7 @@ export default function Products() {
 
     if (loading) {
         return <Loader />;
-      }
+    }
 
     return (
         <>
